@@ -4,6 +4,7 @@ from django.utils import timezone
 from django.urls import reverse
 
 from .models import Question
+from django.contrib.auth.models import User
 
 
 class QuestionModelTests(TestCase):
@@ -79,6 +80,15 @@ class QuestionIndexViewTests(TestCase):
         self.assertContains(response, "No polls are available.")
 
     def test_unpublished_is_seen_by_admin_user(self):
+        user = User.objects.create_user(
+            username='davisphem', password='phemmy2022', is_staff=True)
+        user.save()
+        create_question(question_text='Question 1', days=30, choice=False)
+        self.client.login(username='davisphem', password='phemmy2022')
+        response = self.client.get(reverse('polls:index'))
+        self.assertEqual(response.status_code, 200)
+        self.assertQuerysetEqual(response.context['latest_question_list'], [
+            '<Question: Question 1>'])
 
 
 class QuestionDetailViewTests(TestCase):
