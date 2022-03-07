@@ -1,0 +1,17 @@
+{% extends 'polls/base.html' %}
+{% block home %}<div style="display: inline; color:grey;" class='home'>Home</div>{% endblock %}
+{% block title %}Polls list{% endblock %} {% block content %} {% if latest_question_list %}
+<ul>
+  {% for question in latest_question_list %}
+  <li>
+    <a href="{% url 'polls:detail' question.id %}"
+      >{{ question.question_text }}</a
+    >
+    --- {{ question.pub_date }}{% if question.was_published_recently %}--
+    **recent**{% endif %}
+  </li>
+  {% endfor %}
+</ul>
+{% else %}
+<p>No polls are available.</p>
+{% endif %} {% endblock %}

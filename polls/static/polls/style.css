@@ -1,0 +1,81 @@
+body{
+  color: darkblue;
+  font-size: 15px;
+  text-align: center;
+  background: lightblue;
+}
+main{
+  min-height: 45vh;
+  border: 3px solid darkblue;
+}
+main ul{
+  text-align: left;
+  list-style-type: decimal-leading-zero;
+  padding-top: 50px;
+}
+.btn{
+  color: currentColor;
+  width: 60%;
+  height: 30px;
+  font-size: 1em;
+  background: lightblue;
+  border: 2px solid white;
+  outline: none;
+}
+li:hover{
+  color: grey;
+}
+.btn:hover, .btn:active, .btn:focus{
+  background: white;
+  border: 2px solid grey;
+}
+a:hover, a:focus, a:active{
+  color: darkblue;
+}
+.results{
+  list-style-type:square;
+}
+ul li, form input{
+  margin-top: 15px; 
+}
+form {
+  text-align: left;
+  padding: 20px 30vw;
+}
+footer{
+  margin-top: 20px;
+}
+a.voteagain{
+  margin-top: 20px;
+  display: inline-block;
+}
+.love{
+  color: red;
+}
+.love:hover{
+  color: hotpink;
+  cursor: pointer;
+}
+header > *{
+  margin-left: 15px;
+}
+.no-s-a{
+  text-decoration: none;
+  color: darkblue;
+}
+@media only screen and (min-width: 768px){
+  main{
+    min-height: 60vh;
+  }
+  ul, input{
+    margin: auto 2% auto 35%;
+  }
+  .btn{
+    width: 30%;
+    font-size: 1.5em;
+    vertical-align: middle;
+  }
+  header > *{
+    margin-left: 50px;
+  }
+}

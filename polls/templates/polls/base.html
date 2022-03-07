@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  {% load static %}
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'polls/style.css' %}"
+    />
+    <title>{% block title %} Base title {% endblock %}</title>
+  </head>
+  <body>
+    <header>
+      <h1>
+        <a class="no-s-a" href="{% url 'polls:index' %}">Votee Polls System</a>
+      </h1>
+      {% block home %}<a href="{% url 'polls:index' %}" class="home top">Home</a
+      >{% endblock %}
+      <a href="https://github.com/jay-davisphem" class="github top">Github</a>
+      <a href="https://linkedin.com/in/davisphem" class="linkedin top"
+        >Linkedin</a
+      >
+      <a href="https://twitter.com/oluw4femi" class="tweet top">Twitter</a>
+    </header>
+    <main>{% block content %}{% endblock %}</main>
+    <footer>
+      {% block footer %}Made with <span class="love">&#10084;</span> by
+      <a href="mailto:davidoluwafemi178@gmail.com">David Oluwafemi</a>
+      {% endblock %}
+    </footer>
+  </body>
+</html>
