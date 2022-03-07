@@ -1,19 +1,19 @@
-body{
+body {
   color: darkblue;
   font-size: 15px;
   text-align: center;
   background: lightblue;
 }
-main{
+main {
   min-height: 45vh;
   border: 3px solid darkblue;
 }
-main ul{
+main ul {
   text-align: left;
   list-style-type: decimal-leading-zero;
   padding-top: 50px;
 }
-.btn{
+.btn {
   color: currentColor;
   width: 60%;
   height: 30px;
@@ -22,60 +22,68 @@ main ul{
   border: 2px solid white;
   outline: none;
 }
-li:hover{
+li:hover {
   color: grey;
+  cursor: pointer;
 }
-.btn:hover, .btn:active, .btn:focus{
+.btn:hover,
+.btn:active,
+.btn:focus {
   background: white;
   border: 2px solid grey;
 }
-a:hover, a:focus, a:active{
+a:hover,
+a:focus,
+a:active {
   color: darkblue;
 }
-.results{
-  list-style-type:square;
+.results {
+  list-style-type: square;
 }
-ul li, form input{
-  margin-top: 15px; 
+ul li,
+form input {
+  margin-top: 15px;
 }
 form {
   text-align: left;
   padding: 20px 30vw;
 }
-footer{
+footer {
   margin-top: 20px;
 }
-a.voteagain{
+a.voteagain {
   margin-top: 20px;
   display: inline-block;
 }
-.love{
+.love {
   color: red;
 }
-.love:hover{
+.love:hover {
   color: hotpink;
   cursor: pointer;
+  font-size: 1.2em;
 }
-header > *{
+header > * {
   margin-left: 15px;
 }
-.no-s-a{
+.no-s-a {
   text-decoration: none;
   color: darkblue;
 }
-@media only screen and (min-width: 768px){
-  main{
+@media only screen and (min-width: 768px) {
+  main {
     min-height: 60vh;
   }
-  ul, input{
+  ul,
+  input {
     margin: auto 2% auto 35%;
   }
-  .btn{
+  .btn {
     width: 30%;
     font-size: 1.5em;
     vertical-align: middle;
   }
-  header > *{
+  header > * {
     margin-left: 50px;
   }
 }
