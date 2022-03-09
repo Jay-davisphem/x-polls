@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/4.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
-
+import django_heroku
 from pathlib import Path
 import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -20,10 +20,17 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ['DJANGO_SECRET_KEY']
+try:
+    SECRET_KEY = os.environ['DJANGO_SECRET_KEY']
+except KeyError:
+    SECRET_KEY = '0861cc16-9f12-11ec-a25f-6f25bb063c4e'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ['DJANGO_DEBUG'] == 'True'
+try:
+    DEBUG = os.environ['DJANGO_DEBUG'] == 'True'
+except KeyError:
+    DEBUG = True
+
 
 ALLOWED_HOSTS = ['0.0.0.0', 'localhost']
 
@@ -125,3 +132,4 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+django_heroku.settings(locals())
